@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const StyledSection = styled.section`
     text-align: left;
@@ -16,5 +17,10 @@ const Section = ({title, children}) => (
         {children}
     </StyledSection>
 )
+
+Section.propTypes = {
+    title: PropTypes.string.isRequired, 
+    children: PropTypes.object.isRequired,
+}
 
 export default Section;

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Button = styled.button`
     margin: 3px;
@@ -15,6 +16,11 @@ const FeedbackOptions = ({options, onLeaveFeedback}) => {
         {options.map(name => (<Button onClick={onLeaveFeedback} key={name}>{name}</Button>))}
     </div>
     )
+}
+
+FeedbackOptions.propTypes = {
+    options: PropTypes.arrayOf(PropTypes.string.isRequired),
+    onLeaveFeedback: PropTypes.func.isRequired,
 }
 
 export default FeedbackOptions;
